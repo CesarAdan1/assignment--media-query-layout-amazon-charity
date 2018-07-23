@@ -1,0 +1,233 @@
+@import "./styles/mixin";
+@import "./styles/var";
+
+body{margin:0;}
+p{margin: 0;}
+
+//MOBILE
+    .title{
+        @include configuration();
+        &__image{
+            width:20%;
+            height: auto;
+            img{width: 155px;}
+        }
+        &__bars {@include configuration();}
+        &__nav{display: none}
+    }
+
+    .subtitle{
+        @include padding();
+        &__title {@include header();}
+        &__subtitle {@include header();}
+        a {@include link-style();}
+    }
+
+    .article{
+        @include padding();
+        &__image{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+        &__title {@include title();}
+        &__text{
+            @include title();
+            p{@include left-border-txt();}
+        }
+        a {@include link-style();}   
+    }
+
+    .container-button {
+        @include padding();
+        button{@include button-style();}
+    }
+
+    .rectangle {
+        @include padding();
+        &__text {
+            h3{@include header();}
+            a{@include link-style();}
+        }
+        &__image {
+            margin-top: 10px;
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    .icons { 
+        @include padding();
+        background: $dark-gray;
+        color: white;
+
+        &__content{
+            padding: 20px 35px;
+            &__icons{@include icons-icons();}            
+            &__title{@include title();}
+            &__text{@include icons-text();}
+            &__link{@include link-style;}
+        }
+        
+    }
+
+    .highlights {
+        @include highlight-config();
+        h5{margin: 20px;
+            color: white;
+        @include title();}
+        &__camp {
+            display: flex;
+            flex-direction: row;
+            &__input {
+                width: 30%;
+                height: 35px;
+            }
+            &__button {
+                @include button-style();
+                width: 100px;
+                margin: 0 10px;
+            }
+        }
+    }
+
+@media screen and (min-width:768px) {
+    .title_sub {
+        display: none;
+    }
+    .article {
+        display: flex;
+        flex-direction: row;
+        &__title{
+            padding-left: 10px;
+            margin-top: 0;
+        }
+        &__text{
+            p {
+            border: 0px;}
+        }
+    }
+    .container-button {
+        display: flex;
+        justify-content: center;
+        button{
+            width: 70%;
+        }
+    }
+    .rectangle {
+        &__image{
+            display: flex;
+            justify-content: center;
+            img{
+                width: 70%;
+            }
+        }
+    }
+    .icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &__content {
+            width: 40%;
+        }
+    }
+    .highlights {
+        display: flex;
+        flex-direction: row;
+        .subcontainer-highlights {
+            display: flex;
+            flex-direction: column;
+            width: 70%;            
+        }
+        &__follow {
+            @include left-border-txt();
+            border-left: 1px solid $dark-gray;
+        }
+
+        &__camp { 
+            margin-left: 10px;
+            @include left-border-txt();
+            border-left: 1px solid $dark-gray;
+            &__button {
+                height: 41px;;
+            }
+        }
+    }
+
+}
+
+//VERION DESKTOP
+@media screen and (min-width: 1024px){
+    .title {
+        &__bars {
+            display: none;
+        }
+        &__nav{
+            display: flex;
+            flex-direction: row;
+            &__option {
+                list-style: none;
+                margin: 0 40px;
+                @include fancy-heder();
+                color: $light-gray;
+                border-left: 2px solid $yellow;
+
+                padding:0 60px;
+            }
+        }
+    }
+
+    .subtitle {
+        padding: 0 200px;
+    }
+
+    .article {
+        padding: 0 200px;
+    }
+
+    .container-button {
+        button {
+            width: 45%;
+        }
+    }
+
+    .rectangle {
+        padding: 0 200px;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &__content{
+            width: 20%;
+        }
+    }
+    .highlights {
+        display: flex;
+        flex-direction: row;
+        .subcontainer-highlights {
+            display: flex;
+            flex-direction: column;
+            width: 70%;            
+        }
+
+        &__follow {
+            @include left-border-txt();
+            border-left: 1px solid $dark-gray;
+        }
+
+        &__camp {
+            margin-left: 10px;
+            @include left-border-txt();
+            border-left: 1px solid $dark-gray;
+            &__button{
+                height: 41px;;
+            }
+        }
+    }
+}
+

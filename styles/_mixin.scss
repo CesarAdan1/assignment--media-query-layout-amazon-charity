@@ -1,0 +1,68 @@
+@import "./var";
+
+@mixin padding {
+    margin-top: 20px;
+    padding: 0 10px; 
+}
+@mixin title {
+    font-family: 'Gill Sans', 'Century Gothic', sans-serif;
+}
+@mixin header {
+    font-family: 'Gill Sans', 'Century Gothic', sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+@mixin header-configuration {
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid $light-gray;
+}
+@mixin configuration{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-right: 8px; 
+    font-size: 24px;
+    height: 55px;
+}
+@mixin link-style {
+    font-family: 'Georgia', 'Palatino', serif;
+    text-decoration: underline solid $yellow; 
+}
+@mixin left-border-txt{
+    border-left: 1px solid $light-gray;
+    padding-left: 10px;
+}
+@mixin button-style {
+    width: 100%;
+    height: 35px;
+    text-transform: uppercase;
+    background-color: $yellow;
+    border: 2px solid $dark-gray;
+}
+@mixin icons-icons {
+    display: flex;
+    justify-content: space-around;
+    font-size: 28px;
+    padding: 0 80px;
+    .fa-twitter{color: #38a9ee;}
+    .fa-facebook-official{color: #425499;}
+    .fa-instagram{color: #577da5;}
+}
+@mixin text-text{
+    font-size: 13px;
+    display: block;
+    padding-bottom: 25px;
+}
+@mixin highlight-config{
+    padding: 15px 10px; 
+    background: $light-gray;
+}
